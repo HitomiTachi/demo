@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Thêm Sách Mới</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="mb-0">➕ Thêm Sách Mới</h2>
+            <a th:href="@{/books}" class="btn btn-secondary">
+                ← Quay lại danh sách
+            </a>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <form th:action="@{/books/add}" th:object="${book}" method="post">
+                    <div class="mb-3">
+                        <label for="id" class="form-label">ID <span class="text-muted">(Tự động nếu để trống)</span></label>
+                        <input type="number" 
+                               class="form-control" 
+                               id="id" 
+                               th:field="*{id}"
+                               placeholder="Để trống để tự động tạo ID">
+                        <small class="form-text text-muted">Nếu để trống, hệ thống sẽ tự động tạo ID mới</small>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Tiêu đề <span class="text-danger">*</span></label>
+                        <input type="text" 
+                               class="form-control" 
+                               id="title" 
+                               th:field="*{title}"
+                               required
+                               placeholder="Nhập tiêu đề sách">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="author" class="form-label">Tác giả <span class="text-danger">*</span></label>
+                        <input type="text" 
+                               class="form-control" 
+                               id="author" 
+                               th:field="*{author}"
+                               required
+                               placeholder="Nhập tên tác giả">
+                    </div>
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a th:href="@{/books}" class="btn btn-secondary me-md-2">Hủy</a>
+                        <button type="submit" class="btn btn-primary">💾 Lưu Sách</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

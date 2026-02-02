@@ -53,4 +53,20 @@ public class BookService {
     public void deleteBook(int id) {
         books.removeIf(book -> book.getId() == id);
     }
+
+    // 6. Tìm kiếm sách theo tiêu đề hoặc tác giả
+    public List<Book> searchBooks(String keyword) {
+        if (keyword == null || keyword.trim().isEmpty()) {
+            return getAllBooks();
+        }
+        String searchKeyword = keyword.toLowerCase().trim();
+        List<Book> result = new ArrayList<>();
+        for (Book book : books) {
+            if (book.getTitle().toLowerCase().contains(searchKeyword) ||
+                book.getAuthor().toLowerCase().contains(searchKeyword)) {
+                result.add(book);
+            }
+        }
+        return result;
+    }
 }

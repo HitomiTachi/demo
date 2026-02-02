@@ -1,14 +1,15 @@
 package com.example.demo.Model;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+
 public class Book {
     private int id;
     private String title;
     private String author;
 
-    // Constructors
+    // Constructor không tham số (cần cho Thymeleaf form binding)
+    public Book() {
+    }
+
+    // Constructor với tham số
     public Book(int id, String title, String author) {
         this.id = id;
         this.title = title;
