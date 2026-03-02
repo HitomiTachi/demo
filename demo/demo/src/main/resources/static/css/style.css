@@ -1,4 +1,4 @@
-/* Custom styles cho ứng dụng Quản lý Sách */
+/* Custom styles cho ứng dụng Quản lý Sản phẩm */
 
 body {
     min-height: 100vh;
@@ -10,9 +10,40 @@ main {
     flex: 1;
 }
 
+
 .navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+.card {
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.table th, .table td {
+    vertical-align: middle;
+}
+
+.img-thumbnail {
+    border-radius: 0.5rem;
+    border: 1px solid #dee2e6;
+}
+
+.btn-primary, .btn-success, .btn-danger, .btn-secondary {
+    min-width: 90px;
+}
+
+.form-label {
+    font-weight: 500;
+}
+
+.form-control, .form-select {
+    border-radius: 0.5rem;
+}
+
+.alert {
+    margin-top: 1rem;
 }
 
 .card {
@@ -24,13 +55,14 @@ main {
     background-color: rgba(0, 123, 255, 0.05);
 }
 
+
 .btn {
-    transition: all 0.3s ease;
+    transition: all 0.2s;
 }
 
 .btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
 
 .alert {
